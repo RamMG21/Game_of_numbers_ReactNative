@@ -8,18 +8,33 @@ export default function StartGameScreen(){
         <TextInput 
         maxLength={4}
         keyboardType='numeric'
+        autoCapitalize="none"
+        autoCorrect={false}
         style = {styles.numberInput} 
         />
-        <Text>Calculculate</Text>
+        <Text style = {styles.text}>Calculculate</Text>
+
+        <View style = {styles.buttonsContainer}>
+
+            <View style = {styles.buttonContainer}>
+             <PrimaryButton>Rest</PrimaryButton>
+            </View>
+
+            <View style = {styles.buttonContainer}>
+             <PrimaryButton>Confirm</PrimaryButton>
+            </View>
+       
+        </View>
         
     </View>
 }
 
 const styles = StyleSheet.create({
     inputContainer: {
-        
+        justifyContent: 'center',
+        alignItems: 'center',
         marginTop: 100,
-        marginHorizontal: 44,
+        marginHorizontal: 25,
         padding: 16,
         backgroundColor: '#72063c',
         borderRadius: 8,
@@ -31,14 +46,25 @@ const styles = StyleSheet.create({
     },
     numberInput: {
         height: 60,
-        width: 50,
+        width: 60,
         fontSize: 32,
         borderBottomColor: '#ddb52f',
         borderBottomWidth: 2,
-        color: '#ddb52f',
+        color: 'white',
         marginVertical: 8,
         fontWeight: 'bold',
         textAlign: 'center'
+        
     },
+    text: {
+        color: 'white',
+    },
+
+    buttonsContainer: {
+        flexDirection: 'row',
+    },
+    buttonContainer: {
+        flex: 1,
+    }
     
 });
