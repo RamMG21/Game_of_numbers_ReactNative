@@ -1,7 +1,7 @@
-import { StatusBar } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
 import { StyleSheet, Text, View } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
@@ -10,7 +10,7 @@ export default function App() {
 
   const [userNumber, setUserNumber ] = useState();
 
-  function pickedNumberHandler(pickedNumber) {
+  function pickedNumberHandler(pickedNumber: SetStateAction<undefined>) {
     setUserNumber(pickedNumber);
   }
 
@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <LinearGradient colors={['#44000B', '#E0455F']} style={styles.rootScreen}>
-      {screen}
+      <SafeAreaView style = {styles.rootScreen}>{screen}</SafeAreaView>
     </LinearGradient>
   );
 }

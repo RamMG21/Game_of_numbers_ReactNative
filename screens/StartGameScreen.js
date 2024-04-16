@@ -3,6 +3,7 @@ import { useState } from "react";
 import React from "react";
 
 import PrimaryButton from "../components/PrimaryButton";
+import Colors from '../constants/colors';
 
 export default function StartGameScreen({onPickNumber}){
 
